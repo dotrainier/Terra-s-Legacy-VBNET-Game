@@ -1,0 +1,125 @@
+﻿<Window x:Class="Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TerrasLegacy"
+        mc:Ignorable="d"
+       Title="Terra's Legacy" Height="350" Width="530" KeyDown="windowKeyDown" KeyUp="windowKeyUp" Loaded="gameLoaded" WindowStartupLocation="CenterScreen">
+    <Canvas VerticalAlignment="Bottom" Height="350" Focusable="True" x:Name="gameCanvas">
+
+        <Rectangle Height="350" Width="2648" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="0" Canvas.Top="0" x:Name="bg">
+            <Rectangle.Fill>
+                <ImageBrush Stretch="UniformToFill" ImageSource="pack://application:,,,/Assets/bg/bg1.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+
+        <Image  Canvas.Left="78" Canvas.Top="237" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="playerImage" Source="pack://application:,,,/Assets/characterActions/Terra/JumpRight/JumpRight4.png" OpacityMask="#FFF02929"/>
+        <Rectangle Height="23" Canvas.Top="227" Width="102" Tag="platformSetFoot" Canvas.Left="335" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Red"/>
+        <Rectangle Height="23" Canvas.Top="207" Width="102" Tag="platformSetFoot" Canvas.Left="613" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle Height="24" Canvas.Top="180" Width="105" Tag="platformSetFoot" Canvas.Left="1225" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle Height="24" Canvas.Top="163" Width="105" Tag="platformSetFoot" Canvas.Left="1444" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Rectangle Height="24" Canvas.Top="192" Width="104" Tag="platformSetFoot" Canvas.Left="1662" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle Height="24" Canvas.Top="216" Width="229" Tag="platformSetFoot" Canvas.Left="1868" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Rectangle Height="20" Width="26" Canvas.Left="793" Canvas.Top="290" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.431,0.819">
+            <Rectangle.Fill>
+                <ImageBrush Stretch="UniformToFill" ImageSource="pack://application:,,,/Assets/Tiles/stone1.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+
+        <Rectangle Height="21" Width="26" Canvas.Left="595" Canvas.Top="285" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/stone1.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="58" Width="781" HorizontalAlignment="Left" Canvas.Top="296" VerticalAlignment="Center"  Canvas.Left="-120" Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/floor1.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="58" Width="661" HorizontalAlignment="Center" Canvas.Top="296" VerticalAlignment="Top" Canvas.Left="661" Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/floor2.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+
+        <Rectangle Height="58" Width="661" HorizontalAlignment="Left" Canvas.Top="296" VerticalAlignment="Top" Canvas.Left="1322" Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/floor3.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+
+
+        <Rectangle Height="58" Width="676" HorizontalAlignment="Left" Canvas.Top="296" VerticalAlignment="Center" Canvas.Left="1983" Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/floor4.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="49" Canvas.Top="301" Width="2648" Tag="platformSetFoot" Stroke="Red" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="floorPlatform"/>
+        <Rectangle Height="22" Width="102" Canvas.Left="336" Canvas.Top="228" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush Stretch="UniformToFill"  ImageSource="pack://application:,,,/Assets/Tiles/tile1.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="22" Width="102" Canvas.Left="613" Canvas.Top="208" HorizontalAlignment="Left" VerticalAlignment="Top" Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush Stretch="UniformToFill" ImageSource="pack://application:,,,/Assets/Tiles/tile1.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Rectangle Height="22" Width="105" Canvas.Left="1225" Canvas.Top="181" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform" >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/tile1.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="22" Width="105" Canvas.Left="1444" Canvas.Top="165" HorizontalAlignment="Left" VerticalAlignment="Center" Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/tile1.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="22" Width="105" Canvas.Left="1662" Canvas.Top="194" HorizontalAlignment="Center" VerticalAlignment="Top" Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/tile1.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="22" Width="229" Canvas.Left="1868" Canvas.Top="219" HorizontalAlignment="Left" VerticalAlignment="Top"  Tag="platform">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/tile1.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+
+        <Rectangle Height="22" Width="315" Canvas.Left="812" Canvas.Top="161" Tag="platform" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/tile1.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="22" Canvas.Top="161" Width="315" Tag="platformSetFoot" Canvas.Left="812" Stroke="Red" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle Height="58" Width="555" Canvas.Top="296"  Canvas.Left="-675" Tag="platform" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/floor1.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Image Source="pack://application:,,,/Assets/ui/gameOver.png" Canvas.Left="123" Canvas.Top="129" HorizontalAlignment="Left" VerticalAlignment="Center" Height="46" Width="320" x:Name="gameOverText"/>
+        <Image Source="pack://application:,,,/Assets/ui/buttons/restartBtn.png" Canvas.Left="206" Canvas.Top="182" HorizontalAlignment="Center" Height="38" VerticalAlignment="Top" Stretch="None" MouseEnter="restartHover" MouseDown="RestartBtnClick" x:Name="restartBtn"/>
+        <Rectangle Height="58" Width="676" Canvas.Top="294" Canvas.Left="2648" Tag="platform" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="pack://application:,,,/Assets/Tiles/floor4.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <ProgressBar Height="10" Width="80" Canvas.Left="32" Canvas.Top="49"  Value="300" Background="{x:Null}" OpacityMask="Black" Maximum="300" Foreground="#FF0D85B5" HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="healthbar"/>
+        <Label Content="HP" Canvas.Left="6" Canvas.Top="43" FontFamily="High Tower Text" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="300" Canvas.Left="59" Canvas.Top="43" FontFamily="Calibri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="10" x:Name="hpNum"/>
+
+    </Canvas>
+</Window>
